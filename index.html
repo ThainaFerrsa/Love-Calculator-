@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do amor</title>
+    <style>
+        body {
+            background-color: rgb(247, 184, 215);
+           text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(207, 15, 15)
+        }
+        h3 {
+            text-align: center;
+            font-family: sans-serif;
+            color: rgba(207, 15, 15, 0.418)
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="header-container">
+     <h1>Love Calculator <br> Results</h1>
+     <h3>These are results of calculations by Dr. Love </h3>
+    </div>
+
+    <div id="middle-container">
+        
+
+        <form id="namoro-form">
+            <label for="inicio">Calculate your probalibility:</label><br>
+            <input id="name1" type="text">
+            
+            <input id="name2" type="text">
+            <button type="button" onclick="calcular(document.getElementById('name1').value, document.getElementById('name2').value)">Calcular</button>
+        </form>
+
+        <!-- Names -->
+        <!-- Porcentagem -->
+    <div id="result"></div>
+
+    <div id="result-p"></div>
+
+    <div id="result-m"></div>
+
+
+    </div>
+    <script>
+        function calcular(name1, name2) {
+            //document.getElementById('result').innerHTML = name1 + " e " + name2;
+
+            var n = Math.random()
+            //var date1 = new Date().getHours();
+            var msg = ''
+            //var tt = ''
+            n = n * 100
+            n = Math.floor(n)
+            if (n <= 30) {
+                msg = ' Pouco Compatível '
+                
+            }
+             else if (n >=31 && n <=50) {
+                msg = 'Compatível'
+                
+            } else { 
+                msg = 'Muito Compatível'
+                
+            }
+            /*
+            if(date1 < 12) {
+                tt = 'Bom dia'
+            } else if (date1 >= 13 && date1 <= 17){
+                tt = 'Boa tarde'
+            }
+            else {
+                tt = 'Boa noite gostosa'
+            }
+
+            var msgfinal = tt + name1 + " e " + name2 + ", vocês tem uma um match de " + n + "%, e são " + msg
+            //document.getElementById('result-p').innerHTML = n + "%";
+            
+            */
+            var msgfinal = name1 + " e " + name2 + ", vocês tem uma um match de " + n + "%, e são " + msg
+            document.getElementById('result-m').innerHTML = msgfinal;
+        }
+
+        
+
+
+    </script>
+    
+</body>
+</html>
